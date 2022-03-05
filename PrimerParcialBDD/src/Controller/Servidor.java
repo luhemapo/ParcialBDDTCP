@@ -41,7 +41,7 @@ public class Servidor {
                 System.out.println(mensaje);
  
                 //Le envio un mensaje
-                out.writeUTF("¡Hola mundo desde el servidor!");
+                out.writeUTF("¡SERVIDOR!");
  
                 //Cierro el socket
                 sc.close();
