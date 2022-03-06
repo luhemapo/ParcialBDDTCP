@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
-public class Servidor {
+public class MainServidor {
  
     public static void main(String[] args) {
  
@@ -41,7 +41,7 @@ public class Servidor {
                 System.out.println(mensaje);
  
                 //Le envio un mensaje
-                out.writeUTF("¡SERVIDOR!");
+                out.writeUTF("¡desde SERVIDOR!");
  
                 //Cierro el socket
                 sc.close();
@@ -50,7 +50,7 @@ public class Servidor {
             }
  
         } catch (IOException ex) {
-            Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainServidor.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

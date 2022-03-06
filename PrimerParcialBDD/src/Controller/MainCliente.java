@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
-public class Cliente {
+public class MainCliente {
  
     public static void main(String[] args) {
  
@@ -25,7 +25,7 @@ public class Cliente {
             out = new DataOutputStream(sc.getOutputStream());
  
             //Envio un mensaje al cliente
-            out.writeUTF("¡CLIENTE");
+            out.writeUTF("¡desde CLIENTE!");
  
             //Recibo el mensaje del servidor
             String mensaje = in.readUTF();
@@ -35,7 +35,7 @@ public class Cliente {
             sc.close();
  
         } catch (IOException ex) {
-            Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
  
     }
