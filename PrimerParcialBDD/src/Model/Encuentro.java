@@ -1,29 +1,71 @@
 package Model;
 
 public class Encuentro {
-	public int valorApostado;
-	public int idUsuario;
 	
-	public Encuentro(int valorApostado, int idUsuario) {
+	public int consecutivo;
+	public String equipoLocal;
+	public String equipoVisitante;
+	public String fecha;
+	public String tipoDeporte;
 	
-		this.valorApostado = valorApostado;
-		this.idUsuario = idUsuario;
+	public Encuentro(int consecutivo, String equipoLocal, 
+			String equipoVisitante, String fecha, String tipoDeporte) {
+		
+		this.consecutivo = consecutivo;
+		this.equipoLocal = equipoLocal;
+		this.equipoVisitante = equipoVisitante;
+		this.fecha = fecha;
+		this.tipoDeporte = tipoDeporte;
+		
+	}
+	
+	public String[] getEncientro() {
+		
+		String [] auxEncuentro = {getConsecutivo()+"", getEquipoLocal(), 
+				getEquipoVisitante(), getFecha(), getTipoDeporte()};
+		
+		return auxEncuentro;
+		
 	}
 
-	public int getValorApostado() {
-		return valorApostado;
+	public int getConsecutivo() {
+		return consecutivo;
 	}
 
-	public void setValorApostado(int valorApostado) {
-		this.valorApostado = valorApostado;
+	public void setConsecutivo(int consecutivo) {
+		this.consecutivo = consecutivo;
 	}
 
-	public int getIdUsuario() {
-		return idUsuario;
+	public String getEquipoLocal() {
+		return equipoLocal;
 	}
 
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setEquipoLocal(String equipoLocal) {
+		this.equipoLocal = equipoLocal;
+	}
+
+	public String getEquipoVisitante() {
+		return equipoVisitante;
+	}
+
+	public void setEquipoVisitante(String equipoVisitante) {
+		this.equipoVisitante = equipoVisitante;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getTipoDeporte() {
+		return tipoDeporte;
+	}
+
+	public void setTipoDeporte(String tipoDeporte) {
+		this.tipoDeporte = tipoDeporte;
 	}
 	
 }

@@ -1,3 +1,4 @@
+0,Boston Celtics,New York Knicks,08/08/2022,Basket Ball
 1,Los angeles Galaxy,Portland timbers,07/03/2022,Futbol
 2,Ajax,Feyenoord,07/03/2022,Futbol
 3,Chivas,Cruz Azul,07/03/2022,Futbol

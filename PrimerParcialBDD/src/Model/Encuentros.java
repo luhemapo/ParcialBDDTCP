@@ -1,59 +1,39 @@
 package Model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Encuentros {
-	public int consecutivo;
-	public String equipoLocal;
-	public String equipoVisitante;
-	public String fecha;
-	public String deporte;
 	
-	public Encuentros(int consecutivo, String equipoLocal, 
-			String equipoVisitante, String fecha, String deporte) {
-		this.consecutivo = consecutivo;
-		this.equipoLocal = equipoLocal;
-		this.equipoVisitante = equipoVisitante;
-		this.fecha = fecha;
-		this.deporte = deporte;
+	public ArrayList<Encuentro> encuentro;
+	
+	public Encuentros() {
+		encuentro = new ArrayList<Encuentro>();
+		leerArchivo();
 	}
+	public void leerArchivo() {
 
-	public int getConsecutivo() {
-		return consecutivo;
+		try {
+			BufferedReader in = new BufferedReader(new FileReader("Encuentros.txt"));
+			String str;
+
+			while ((str = in.readLine()) != null) {
+				String[] arr = str.split(",");
+				Encuentro auxEncuentro = new Encuentro(Integer.parseInt(arr[0]), arr[1], arr[2],arr[3], arr[4]);
+				encuentro.add(auxEncuentro);
+							}
+			in.close();
+		} catch (IOException e) {
+			System.out.println("File Read Error");
+		}
 	}
-
-	public void setConsecutivo(int consecutivo) {
-		this.consecutivo = consecutivo;
+	public ArrayList<Encuentro> getEncuentro() {
+		return encuentro;
 	}
-
-	public String getEquipoLocal() {
-		return equipoLocal;
-	}
-
-	public void setEquipoLocal(String equipoLocal) {
-		this.equipoLocal = equipoLocal;
-	}
-
-	public String getEquipoVisitante() {
-		return equipoVisitante;
-	}
-
-	public void setEquipoVisitante(String equipoVisitante) {
-		this.equipoVisitante = equipoVisitante;
-	}
-
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
-	public String getDeporte() {
-		return deporte;
-	}
-
-	public void setDeporte(String deporte) {
-		this.deporte = deporte;
+	public void setEncuentro(ArrayList<Encuentro> encuentro) {
+		this.encuentro = encuentro;
 	}
 	
 }
